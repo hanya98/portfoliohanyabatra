@@ -173,3 +173,18 @@ projectItems.forEach(item => {
 animate();
 type();
 
+const projectCards = document.querySelectorAll(".project-card");
+
+const projectObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        projectCards.forEach(card => card.classList.remove("active"));
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+
+projectCards.forEach(card => projectObserver.observe(card));
