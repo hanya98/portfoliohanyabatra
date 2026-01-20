@@ -188,3 +188,38 @@ const projectObserver = new IntersectionObserver(
 );
 
 projectCards.forEach(card => projectObserver.observe(card));
+const contactSection = document.querySelector(".contact-section");
+
+const contactObserver = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting) {
+      contactSection.classList.add("show");
+    }
+  },
+  { threshold: 0.3 }
+);
+
+contactObserver.observe(contactSection);
+const projectsWrapper = document.querySelector(".projects-wrapper");
+const bgText = document.querySelector(".bg-text");
+
+let glowPlayed = false;
+
+const projectsObserver = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting && !glowPlayed) {
+      glowPlayed = true;
+
+      bgText.classList.add("glow");
+
+      setTimeout(() => {
+        bgText.classList.remove("glow");
+      }, 900);
+    }
+  },
+  {
+    threshold: 0.25
+  }
+);
+
+projectsObserver.observe(projectsWrapper);

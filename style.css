@@ -328,7 +328,7 @@ h1 { font-size: 60px; font-weight: 700; margin-bottom: 20px; }
 .btn-main:hover { background: #fff; color: #000; }
 
 .projects-section {
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
     background-color: #f0f0f0;
     color: #000;
 }
@@ -393,7 +393,7 @@ h1 { font-size: 60px; font-weight: 700; margin-bottom: 20px; }
     object-fit: cover;
 }
 
-/* Top "NYC" style tag */
+
 .bento-tag {
     font-family: monospace;
     font-size: 12px;
@@ -403,33 +403,41 @@ h1 { font-size: 60px; font-weight: 700; margin-bottom: 20px; }
     padding: 2px 8px;
     width: fit-content;
 }
-/* PROJECTS SECTION */
+
 .projects-wrapper {
   position: relative;
-  min-height: 400vh;
-  padding: 0 8vw;
+  min-height: 50vh;
+  padding: 0 4vw;
   background: transparent;
 }
 
 .bg-text {
   position: sticky;
-  top: 30%;
+  top: 15%;
   font-size: 18vw;
   font-weight: 800;
   color: white;
   opacity: 0.04;
   z-index: 0;
   pointer-events: none;
+  
+}
+.bg-text.glow {
+  opacity: 0.12;
+  text-shadow:
+    0 0 40px rgba(0, 255, 255, 0.4),
+    0 0 80px rgba(0, 255, 255, 0.25);
+  transition: opacity 0.8s ease, text-shadow 0.8s ease;
 }
 
 .projects {
   position: relative;
   z-index: 2;
-  margin-top: 100vh;
+  margin-top: 25vh;
 }
 
 .project-card {
-  min-height: 90vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   gap: 60px;
@@ -495,7 +503,7 @@ h1 { font-size: 60px; font-weight: 700; margin-bottom: 20px; }
   box-shadow: 0 20px 60px rgba(0, 255, 255, 0.15);
 }
 
-/* Mobile fallback */
+
 @media (max-width: 768px) {
   .bg-text {
     display: none;
@@ -532,4 +540,196 @@ h1 { font-size: 60px; font-weight: 700; margin-bottom: 20px; }
   margin-top: 10px;
   font-size: 0.9rem;
   opacity: 0.6;
+}
+
+.contact-section {
+  padding: 120px 0;
+  background: #000;
+  position: relative;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  color: cyan;
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  color: #aaa;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: cyan;
+  font-size: 1.5rem;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.contact-icon:hover {
+  background: cyan;
+  color: #000;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  /* Banner adjustments */
+  .banner {
+    padding: 120px 0 60px 0;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .tagline {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-bottom: 15px;
+  }
+
+  .header-img {
+    animation: none; /* Disable animation on mobile for better performance */
+  }
+
+  /* Intro section */
+  .intro-section {
+    padding: 60px 0;
+  }
+
+  .intro-card {
+    padding: 40px 30px;
+  }
+
+  .name {
+    font-size: 35px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .profile-img {
+    width: 250px;
+    height: 280px;
+  }
+
+  .info-boxes {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .info-box {
+    padding: 15px;
+  }
+
+  .intro-btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Experience ticker */
+  .experience-ticker-wrapper {
+    height: 300px;
+  }
+
+  .exp-ticker-item {
+    padding: 20px;
+    height: 120px;
+  }
+
+  .exp-text h5 {
+    font-size: 20px;
+  }
+
+  /* Skills section */
+  .skills-section {
+    padding: 60px 0;
+  }
+
+  .skill-card {
+    width: 180px;
+    height: 180px;
+  }
+
+  .skill-card i {
+    font-size: 60px;
+  }
+
+  .skill-card span {
+    font-size: 16px;
+  }
+
+  /* Projects section */
+  .projects-section {
+    padding: 60px 0 30px 0;
+  }
+
+  .projects-bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+  }
+
+  .large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .medium, .wide {
+    grid-column: span 1;
+  }
+
+  .bento-card {
+    padding: 25px;
+  }
+
+  .bento-main-text h2 {
+    font-size: 50px;
+  }
+
+  /* Contact section */
+  .contact-section {
+    padding: 80px 0;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .contact-icons {
+    gap: 20px;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
 }
